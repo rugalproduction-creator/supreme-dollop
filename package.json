@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "rugalproductions",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@multiavatar/multiavatar": "^1.0.7",
+    "@solidjs/router": "^0.15.4",
+    "@supabase/supabase-js": "^2.98.0",
+    "@tailwindcss/vite": "^4.2.1",
+    "lucide-solid": "^0.575.0",
+    "solid-js": "^1.9.10",
+    "tailwindcss": "^4.2.1"
+  },
+  "devDependencies": {
+    "vite": "^8.0.0-beta.13",
+    "vite-plugin-solid": "^2.11.10"
+  },
+  "pnpm": {
+    "overrides": {
+      "vite": "^8.0.0-beta.13"
+    }
+  },
+  "imports": {
+    "#pgs/*": "./src/pages/*",
+    "#ui/*": "./src/ui/*",
+    "#assets/*": "./src/assets/*",
+    "#utils/*": "./src/utils/*"
+  }
+}
