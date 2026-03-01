@@ -98,7 +98,7 @@ export const signInWithDiscord = action(async () => {
   const { error } = await supabase.auth.signInWithOAuth({
     provider: 'discord',
     options: {
-      redirectTo: 'http://rugalproductions.co.ke',
+      redirectTo: 'https://rugalproductions.co.ke',
     },
   })
   if (error) console.error(error)
@@ -108,7 +108,7 @@ export const signInWithGoogle = action(async () => {
   const { error } = await supabase.auth.signInWithOAuth({
     provider: 'google',
     options: {
-      redirectTo: 'http://localhost:5173',
+      redirectTo: 'https://rugalproductions.co.ke',
     },
   })
   if (error) console.error(error)
