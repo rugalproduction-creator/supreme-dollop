@@ -98,7 +98,7 @@ export const signInWithDiscord = action(async () => {
   const { error } = await supabase.auth.signInWithOAuth({
     provider: 'discord',
     options: {
-      redirectTo: 'http://localhost:5173',
+      redirectTo: 'http://rugalproductions.co.ke',
     },
   })
   if (error) console.error(error)
