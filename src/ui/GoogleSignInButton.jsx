@@ -2,7 +2,7 @@ export default function GoogleSignInButton({ onClick, className = "" }) {
     return (
         <button
             onClick={onClick}
-            className={`w-full py-3 my-2 rounded-lg border border-solid border-white/20 bg-white/5 hover:bg-white/10 transition-all duration-300 flex items-center justify-center gap-3 cursor-pointer group ${className}`}
+            className={`w-full py-3 my-2 rounded-lg border border-solid border-white/20 bg-white/5 hover:bg-white/10 active:bg-white/10 transition-all duration-300 flex items-center justify-center gap-3 cursor-pointer group ${className}`}
         >
             {/* Google Icon */}
             <svg
@@ -11,7 +11,7 @@ export default function GoogleSignInButton({ onClick, className = "" }) {
                 viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                className="group-hover:scale-110 transition-transform duration-300"
+                className="group-hover:scale-110 group-active:scale-110 transition-transform duration-300"
             >
                 <path
                     d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
@@ -30,7 +30,7 @@ export default function GoogleSignInButton({ onClick, className = "" }) {
                     fill="#EA4335"
                 />
             </svg>
-            <span className="text-white font-medium text-sm group-hover:font-semibold transition-all duration-300">
+            <span className="text-white font-medium text-sm group-hover:font-semibold group-active:font-semibold transition-all duration-300">
                 Continue with Google
             </span>
         </button>

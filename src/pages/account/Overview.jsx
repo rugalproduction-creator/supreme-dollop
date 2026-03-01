@@ -1,6 +1,6 @@
 import { PenIcon, EllipsisIcon, RocketIcon } from "lucide-solid";
 
-export default function AccountOverview({user}){
+export default function AccountOverview({user, onEdit}){
     return (
         <div className="p-2">
             <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-12">
@@ -16,6 +16,7 @@ export default function AccountOverview({user}){
                         <button
                             title="Edit profile"
                             aria-label="Edit profile"
+                            onClick={()=>onEdit && onEdit()}
                             className="cursor-pointer w-8 h-8 md:w-10 md:h-10 rounded-md bg-prussian-blue-600 hover:bg-prussian-blue-400 flex items-center justify-center"
                         >
                             <PenIcon className="w-4 h-4 md:w-5 md:h-5" />

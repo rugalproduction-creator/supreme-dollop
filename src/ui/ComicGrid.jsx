@@ -22,7 +22,7 @@ export default function ComicGrid(props){
                 const id = comic.id ?? comic.name
                 const bookmarked = isBookmarked(id)
                 return (
-                <div className="bg-black-500 rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-all hover:scale-110 duration-600 cursor-pointer">
+                <div className="bg-black-600/40 rounded-lg shadow-sm overflow-hidden hover:shadow-md active:shadow-md transition-all hover:scale-110 active:scale-110 duration-600 cursor-pointer">
                     <div className="relative">
                         <img src={comic.cover} alt={comic.name} className="w-full h-48 object-cover"/>
                         <div className="absolute top-2 right-2 flex gap-2">
@@ -40,7 +40,7 @@ export default function ComicGrid(props){
                             {!props.showDeleteButton ? (
                                 <button
                                     onClick={() => toggleBookmark(comic)}
-                                    className={`p-2 rounded-full bg-black/60 text-white shadow-md ring-1 ring-white/10 border border-white/6 backdrop-blur-sm transition-colors ${bookmarked ? 'bg-yellow-500 text-black-800 hover:bg-yellow-600' : 'hover:bg-prussian-blue-600'}`}
+                                    className={`p-2 rounded-full bg-black/60 text-white shadow-md ring-1 ring-white/10 border border-white/6 backdrop-blur-sm transition-colors ${bookmarked ? 'bg-yellow-500 text-black-800 hover:bg-yellow-600 active:bg-yellow-600' : 'hover:bg-prussian-blue-600 active:bg-prussian-blue-600'}`}
                                     aria-label={bookmarked ? 'Remove bookmark' : 'Add bookmark'}
                                 >
                                     <Bookmark size={16} />
@@ -59,7 +59,7 @@ export default function ComicGrid(props){
                                         removeBookmark(id)
                                         if (props.onToggleBookmark) props.onToggleBookmark(id, false)
                                     }}
-                                    className="p-2 rounded-full bg-black/60 text-white shadow-md hover:bg-rose-600/90 transition-colors ring-1 ring-white/10 border border-white/6 backdrop-blur-sm"
+                                    className="p-2 rounded-full bg-black/60 text-white shadow-md hover:bg-rose-600/90 active:bg-rose-600/90 transition-colors ring-1 ring-white/10 border border-white/6 backdrop-blur-sm"
                                     aria-label="Remove bookmark"
                                 >
                                     <Trash2 size={16} />

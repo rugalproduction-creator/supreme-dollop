@@ -2,11 +2,12 @@ import { createSignal } from "solid-js";
 import AccountOverview from "./Overview";
 import AccountHighlight from "./Highlight";
 import AccountContent from "./Content";
+import EditProfile from "./modals/EditProfile";
 
 export default function Account(){
     const [activeTab, setActiveTab] = createSignal('posts')
 
-    const user = {
+    const [user, setUser] = createSignal({
         avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&q=80&auto=format&fit=crop',
         username: 'rugal.creates',
         name: 'Rugal Productions',
@@ -14,7 +15,9 @@ export default function Account(){
         followers: 12500,
         following: 320,
         bio: ["Comic lover", "Creator", "Sharing my work and inspirations. DM for collabs."],
-    }
+    })
+
+    const [isEditOpen, setEditOpen] = createSignal(false)
 
     const samplePosts = Array.from({length:12}).map((_,i)=>({
         id: i+1,
@@ -29,10 +32,20 @@ export default function Account(){
     }))
 
     return (
-        <div className="max-w-screen pt-6 pb-12 px-4 md:pl-20 md:pr-6 overflow-y-scroll h-screen">
-            <AccountOverview user={user} />
+        <div className="w-screen pt-6 pb-12 px-4 md:pl-20 md:pr-6 overflow-y-scroll overflow-x-hidden h-screen">
+            <AccountOverview user={user()} onEdit={() => setEditOpen(true)} />
             <AccountHighlight/>
             <AccountContent activeTab={activeTab} setActiveTab={setActiveTab} samplePosts={samplePosts}/>
+            {isEditOpen() && (
+                <EditProfile
+                    user={user()}
+                    onClose={() => setEditOpen(false)}
+                    onSave={(updated)=>{
+                        setUser(updated)
+                        setEditOpen(false)
+                    }}
+                />
+            )}
         </div>
     )
 }

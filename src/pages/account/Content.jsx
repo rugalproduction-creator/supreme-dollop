@@ -6,10 +6,10 @@ export default function AccountContent(props) {
 
     return (
         <div className="mt-6 border-t border-solid border-white-200 pt-4">
-            <div className="flex items-center gap-8 justify-center md:justify-start mb-4 text-black-700">
-                <button className={`cursor-pointer flex items-center gap-2 px-4 py-2 ${activeTab() === 'posts' ? 'text-prussian-blue-700 font-semibold border-t-2 border-prussian-blue-700' : ''}`} onClick={()=>setActiveTab('posts')}><LayoutGrid size={16}/> POSTS</button>
-                <button className={`cursor-pointer flex items-center gap-2 px-4 py-2 ${activeTab() === 'books' ? 'text-prussian-blue-700 font-semibold border-t-2 border-prussian-blue-700' : ''}`} onClick={()=>setActiveTab('books')}><User size={16}/> BOOKS</button>
-                <button className={`cursor-pointer flex items-center gap-2 px-4 py-2 ${activeTab() === 'tags' ? 'text-prussian-blue-700 font-semibold border-t-2 border-prussian-blue-700' : ''}`} onClick={()=>setActiveTab('tags')}><Tag size={16}/> TAGGED</button>
+            <div className="flex items-center gap-8 justify-center md:justify-start mb-4 text-black-700 py-2 px-4">
+                <button className={`cursor-pointer flex items-center gap-2 ${activeTab() === 'posts' ? 'text-prussian-blue-700 font-semibold border-t-2 border-prussian-blue-700' : ''}`} onClick={()=>setActiveTab('posts')}><LayoutGrid size={16}/> POSTS</button>
+                <button className={`cursor-pointer flex items-center gap-2 ${activeTab() === 'books' ? 'text-prussian-blue-700 font-semibold border-t-2 border-prussian-blue-700' : ''}`} onClick={()=>setActiveTab('books')}><User size={16}/> BOOKS</button>
+                <button className={`cursor-pointer flex items-center gap-2 ${activeTab() === 'tags' ? 'text-prussian-blue-700 font-semibold border-t-2 border-prussian-blue-700' : ''}`} onClick={()=>setActiveTab('tags')}><Tag size={16}/> TAGGED</button>
             </div>
 
             <div>

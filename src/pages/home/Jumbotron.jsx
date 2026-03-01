@@ -48,11 +48,11 @@ export default function Jumbotron(props) {
           </p>
 
           <div class="mt-6 flex gap-4">
-            <button class="cursor-pointer bg-prussian-blue-400 text-white-500 px-6 py-3 rounded-xl font-semibold hover:bg-prussian-blue-600 transition">
+            <button class="cursor-pointer bg-prussian-blue-400 text-white-500 px-6 py-3 rounded-xl font-semibold hover:bg-prussian-blue-600 active:bg-prussian-blue-600 transition">
               Explore
             </button>
 
-            <button class="cursor-pointer border border-white-300 px-6 py-3 rounded-xl hover:bg-white-100 transition">
+            <button class="cursor-pointer border border-white-300 px-6 py-3 rounded-xl hover:bg-white-100 active:bg-white-100 transition">
               Publish
             </button>
           </div>

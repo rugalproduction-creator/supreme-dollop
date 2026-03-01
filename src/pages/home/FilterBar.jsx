@@ -58,22 +58,22 @@ export default function FilterBar() {
                 <div
                   class={`${getPadding()} rounded-lg sm:rounded-xl lg:rounded-2xl transition-all duration-300 ${
                     isActive
-                      ? 'bg-orange-500 shadow-2xl scale-110 shadow-orange-500/50 hover:bg-prussian-blue-600 hover:shadow-xl hover:shadow-orange-500/50'
-                      : 'bg-prussian-blue-700 shadow-lg hover:bg-prussian-blue-600 hover:shadow-xl hover:shadow-orange-500/20'
+                      ? 'bg-orange-500 shadow-2xl scale-110 shadow-orange-500/50 hover:bg-prussian-blue-600 hover:shadow-xl hover:shadow-orange-500/50 active:bg-prussian-blue-600 active:shadow-xl active:shadow-orange-500/50'
+                      : 'bg-prussian-blue-700 shadow-lg hover:bg-prussian-blue-600 hover:shadow-xl hover:shadow-orange-500/20 active:bg-prussian-blue-600 active:shadow-xl active:shadow-orange-500/20'
                   }`}
                 >
                   <IconComponent
                     size={iconSize()}
                     class={`stroke-2 transition-colors duration-300 ${
-                      isActive ? 'text-white group-hover:text-orange-500' : 'text-alabaster-grey-500 group-hover:text-orange-500'
+                      isActive ? 'text-white group-hover:text-orange-500 group-active:text-orange-500' : 'text-alabaster-grey-500 group-hover:text-orange-500 group-active:text-orange-500'
                     }`}
                   />
                 </div>
                 <span
                   class={`text-xs sm:text-sm font-semibold transition-colors duration-300 ${
-                    isActive
-                      ? 'text-orange-500 text-sm sm:text-base font-bold'
-                      : 'text-alabaster-grey-500 group-hover:text-white'
+                      isActive
+                        ? 'text-orange-500 text-sm sm:text-base font-bold'
+                        : 'text-alabaster-grey-500 group-hover:text-white group-active:text-white'
                   }`}
                 >
                   {filter.label}

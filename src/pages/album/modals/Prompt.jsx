@@ -25,13 +25,13 @@ export default function PromptModal(props) {
                 <div class="flex justify-end gap-3">
                     <button
                         onClick={props.onCancel}
-                        class="cursor-pointer px-4 py-2 bg-black-300/40 hover:bg-black-400/80 text-white-400 rounded-md transition"
+                        class="cursor-pointer px-4 py-2 bg-black-300/40 hover:bg-black-400/80 active:bg-black-400/80 text-white-400 rounded-md transition"
                     >
                         Cancel
                     </button>
                     <button
                         onClick={() => props.onConfirm(value())}
-                        class="cursor-pointer px-4 py-2 bg-orange-300 hover:bg-orange-400 text-white-500 rounded-md shadow-sm transition"
+                        class="cursor-pointer px-4 py-2 bg-orange-300 hover:bg-orange-400 active:bg-orange-400 text-white-500 rounded-md shadow-sm transition"
                     >
                         Save
                     </button>

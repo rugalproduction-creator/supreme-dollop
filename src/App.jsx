@@ -15,7 +15,7 @@ export default function App() {
 	  		<Route path="/" component={Login} />
 	  		<Route path="/register" component={Register} />
 		  </Route>
-      <Route path="/" component={Layout}>
+      <Route path="/" component={Layout} preload={checkAuthLoader}>
         <Route path="/" component={Home} preload={contentLoader}/>
         <Route path="/search" component={Search}/>
         <Route path="/album" component={Album}/>
