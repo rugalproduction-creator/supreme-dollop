@@ -69,9 +69,6 @@ function loadRaw(){
 
 function saveRaw(list){
   localStorage.setItem(STORAGE_KEY, JSON.stringify(list))
-  const { data, error } = await supabase
-  .from('album')
-  .upsert({ id: 1, column1: 'new value' })
 }
 
 export function getBookmarks(){
