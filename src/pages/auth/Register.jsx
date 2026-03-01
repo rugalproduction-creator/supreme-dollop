@@ -24,7 +24,7 @@ export default function Register(){
                     <button className="w-full py-2 rounded-md mt-4 border border-solid border-orange-400 bg-orange-300/40 text-orange-400 cursor-pointer hover:bg-orange-200">Login</button>
                 </form>
             </div>
-            <img src={asset('/auth.jpg')} alt="Authentication visual backdrop featuring a professional or welcoming environment for user login" className="w-0 h-0 lg:w-2/3 lg:h-full object-cover" />
+            <img src="/auth.jpg" alt="Authentication visual backdrop featuring a professional or welcoming environment for user login" className="w-0 h-0 lg:w-2/3 lg:h-full object-cover" />
         </div>
     )
 }
