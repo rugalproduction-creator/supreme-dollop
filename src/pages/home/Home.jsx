@@ -11,7 +11,7 @@ export default function Home(){
     const [comics, setComics] = createSignal([
         {
             id: 1,
-            cover: '/jjk.jpg',
+            cover: '/supreme-dollop/jjk.jpg',
             name: 'Jujutsu Kaisen',
             author: 'Gege Akutami',
             views: 1245000,
@@ -22,7 +22,7 @@ export default function Home(){
         },
         {
             id: 2,
-            cover: '/jjk.jpg',
+            cover: '/supreme-dollop/jjk.jpg',
             name: 'Jujutsu Kaisen',
             author: 'Gege Akutami',
             views: 985000,
@@ -33,7 +33,7 @@ export default function Home(){
         },
         {
             id: 3,
-            cover: '/jjk.jpg',
+            cover: '/supreme-dollop/jjk.jpg',
             name: 'Jujutsu Kaisen',
             author: 'Gege Akutami',
             views: 720000,
@@ -44,7 +44,7 @@ export default function Home(){
         },
         {
             id: 4,
-            cover: '/jjk.jpg',
+            cover: '/supreme-dollop/jjk.jpg',
             name: 'Jujutsu Kaisen',
             author: 'Gege Akutami',
             views: 510000,
@@ -55,7 +55,7 @@ export default function Home(){
         },
         {
             id: 5,
-            cover: '/jjk.jpg',
+            cover: '/supreme-dollop/jjk.jpg',
             name: 'Jujutsu Kaisen',
             author: 'Gege Akutami',
             views: 310000,

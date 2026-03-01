@@ -9,7 +9,7 @@ export default function Search(){
     const allComics = [
         {
             id: 1,
-            cover: '/jjk.jpg',
+            cover: '/supreme-dollop/jjk.jpg',
             name: 'Jujutsu Kaisen',
             author: 'Gege Akutami',
             views: 1245000,
@@ -20,7 +20,7 @@ export default function Search(){
         },
         {
             id: 2,
-            cover: '/jjk.jpg',
+            cover: '/supreme-dollop/jjk.jpg',
             name: 'Attack on Titan',
             author: 'Hajime Isayama',
             views: 985000,
@@ -31,7 +31,7 @@ export default function Search(){
         },
         {
             id: 3,
-            cover: '/jjk.jpg',
+            cover: '/supreme-dollop/jjk.jpg',
             name: 'One Piece',
             author: 'Eiichiro Oda',
             views: 720000,
@@ -42,7 +42,7 @@ export default function Search(){
         },
         {
             id: 4,
-            cover: '/jjk.jpg',
+            cover: '/supreme-dollop/jjk.jpg',
             name: 'Death Note',
             author: 'Tsugumi Ohba',
             views: 510000,
@@ -53,7 +53,7 @@ export default function Search(){
         },
         {
             id: 5,
-            cover: '/jjk.jpg',
+            cover: '/supreme-dollop/jjk.jpg',
             name: 'Demon Slayer',
             author: 'Koyoharu Gotouge',
             views: 310000,
