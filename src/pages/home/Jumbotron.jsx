@@ -2,7 +2,6 @@ import { Show } from "solid-js";
 
 export default function Jumbotron(props) {
   const imageUrl = () => '/jumbotron.avif';
-  console.log(props)
 
   return (
     <Show

@@ -11,11 +11,14 @@ export const checkAuthLoader = query(async () => {
 
 
 export const contentLoader = query(async () => {
-    const { data, error } = await supabase.from('content').select('*')
+    const { data, error } = await supabase.from('content').select('*, profiles(username)');
     if (error) {
         console.error("Error fetching content:", error);
         return null;
     }
+    console.log("Fetched content:", data);
+    
     return data;
 }, "contentLoader");
+
 

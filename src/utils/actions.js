@@ -113,3 +113,37 @@ export const signInWithGoogle = action(async () => {
   })
   if (error) console.error(error)
 }, "signInWithGoogleAction");
+
+
+export const fetchResults = async ({ q, genres, sort_by, sort_order }) => {
+    const { data, error } = await supabase.rpc('search_content', {
+      search_query: q || null,
+      filter_genres: genres.length ? genres : null,
+      sort_by,
+      sort_order
+    })
+    if (error) throw error
+	console.log(data)
+    return data
+}
+
+export const fetchGenres = async () => {
+    const { data, error } = await supabase.rpc('get_genres')
+    if (error) throw error
+    return data
+}
+
+export const addBookmark = async (comic, group = 'Saved') => {
+	const id = comic.id;
+	const { data: { user } } = await supabase.auth.getUser()
+	const bookmark = { id, group, user_id: user.id }
+	const { data, error } = await supabase.from('albums').upsert(bookmark).select();
+	if (error) throw error
+	return data
+}
+
+export const removeBookmark = async (id) => {
+	const { data: { user } } = await supabase.auth.getUser()
+	const { error } = await supabase.from('albums').delete().eq('id', id).eq('user_id', user.id)
+	if (error) throw error
+}
