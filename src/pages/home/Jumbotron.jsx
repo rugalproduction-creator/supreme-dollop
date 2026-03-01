@@ -1,7 +1,7 @@
 import { Show } from "solid-js";
 
 export default function Jumbotron(props) {
-  const imageUrl = () => props.content()?.[0]?.cover_url;
+  const imageUrl = () => props.content()?.[0]?.cover_url || '/supreme-dollop/jumbotron.avif';
   console.log(props)
 
   return (
