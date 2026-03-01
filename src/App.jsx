@@ -10,7 +10,7 @@ import Account from "#pgs/account/Account.jsx";
 
 export default function App() {
   return  (
-    <Router base="/supreme-dollop">
+    <Router>
     	<Route path="/auth">
 	  		<Route path="/" component={Login} />
 	  		<Route path="/register" component={Register} />
