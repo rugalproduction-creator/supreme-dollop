@@ -67,7 +67,7 @@ function loadRaw(){
   }
 }
 
-function saveRaw(list){
+async function saveRaw(list){
   localStorage.setItem(STORAGE_KEY, JSON.stringify(list))
 }
 

@@ -147,3 +147,55 @@ export const removeBookmark = async (id) => {
 	const { error } = await supabase.from('albums').delete().eq('id', id).eq('user_id', user.id)
 	if (error) throw error
 }
+
+export const becomeAuthor = async () => {
+	const id = await getUser().then(user => user.id);
+	const { data, error } = await supabase
+		.from('profiles')
+		.update({ role: "author" })
+		.eq('user_id', id);
+	if (error) throw error;
+	return data;
+};
+
+export const getUser = async () => {
+	const { data: { user } } = await supabase.auth.getUser()
+	return user
+}
+
+export const publishContent = async ({ title, description, type, status, genres, cover }) => {
+    const { data: { user } } = await supabase.auth.getUser()
+    if (!user) throw new Error("Not authenticated")
+
+    let cover_url = null
+    const sanitizedTitle = title.trim().toLowerCase().replace(/[^a-z0-9]/g, '-')
+
+    if (cover && cover.size > 0) {
+        const fileExt = cover.name.split('.').pop()
+        const filePath = `${sanitizedTitle}/cover.${fileExt}`
+
+        const { error: uploadError } = await supabase.storage
+            .from('comic')
+            .upload(filePath, cover, { upsert: true })
+
+        if (uploadError) throw uploadError
+
+        cover_url = filePath
+    }
+
+    const { data, error } = await supabase.from('content').insert({
+        title,
+        description,
+        content_type: type,
+        status,
+        genre: genres,
+        author_id: user.id,
+        cover_url,
+        views: 0,
+        likes: 0,
+        rating: 4.2
+    }).select()
+
+    if (error) throw error
+    return data
+}

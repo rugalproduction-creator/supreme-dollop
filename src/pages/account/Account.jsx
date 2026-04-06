@@ -14,6 +14,7 @@ export default function Account(){
         posts: 24,
         followers: 12500,
         following: 320,
+        role: "user",
         bio: ["Comic lover", "Creator", "Sharing my work and inspirations. DM for collabs."],
     })
 

@@ -1,6 +1,8 @@
-import { PenIcon, EllipsisIcon, RocketIcon } from "lucide-solid";
+import { becomeAuthor } from "#utils/actions.js";
+import { PenIcon, EllipsisIcon, RocketIcon, UserCircle } from "lucide-solid";
 
 export default function AccountOverview({user, onEdit}){
+    console.log(user)
     return (
         <div className="p-2">
             <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-12">
@@ -26,6 +28,7 @@ export default function AccountOverview({user, onEdit}){
                             title="Promote"
                             aria-label="Promote"
                             className="cursor-pointer w-8 h-8 md:w-10 md:h-10 rounded-md border border-solid border-orange-400/60 bg-orange-300/40 hover:bg-orange-400 text-white-500 flex items-center justify-center"
+                            onClick={() => becomeAuthor()}
                         >
                             <RocketIcon className="w-4 h-4 md:w-5 md:h-5" />
                         </button>
@@ -33,9 +36,9 @@ export default function AccountOverview({user, onEdit}){
                         <button
                             title="More options"
                             aria-label="More options"
-                            className="cursor-pointer w-8 h-8 md:w-10 md:h-10 rounded-md flex items-center justify-center border border-solid border-white-200 hover:bg-black-600/60"
+                            className="cursor-pointer rounded-lg py-1 px-4 bg-prussian-blue-400/40 text-prussian-blue-800 flex gap-1"
                         >
-                            <EllipsisIcon className="w-4 h-4 md:w-5 md:h-5" />
+                            {user.role == "author" ? <UserPen class="scale-75 mt-0.5"/> : <UserCircle class="scale-75 mt-0.5"/>}{user.role}
                         </button>
                     </div>
 

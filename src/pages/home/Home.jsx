@@ -1,5 +1,4 @@
 import { createAsync } from "@solidjs/router";
-import { createSignal } from "solid-js";
 import FilterBar from "./FilterBar";
 import Jumbotron from "./Jumbotron";
 import { contentLoader } from "#utils/loaders.js";

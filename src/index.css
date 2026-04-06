@@ -82,6 +82,11 @@
   src: url("/src/assets/fonts/Roboto/Roboto-VariableFont_wdht,wght.ttf") format("truetype");
 }
 
+/* Utility class to expose the Oswald variable as a Tailwind-like utility */
+.font-oswald {
+  font-family: var(--font-oswald);
+}
+
 /* Make scrollbars thin and almost invisible */
 * {
   scrollbar-width: thin;
@@ -118,4 +123,17 @@
   color: rgba(255,255,255,0.72);
   max-width: 44rem;
   text-align: center;
+}
+
+/* Chapters input: right-align numbers and hide native spinners for consistency */
+input#chapters {
+  text-align: right;
+}
+input#chapters::-webkit-inner-spin-button,
+input#chapters::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input#chapters {
+  -moz-appearance: textfield;
 }
