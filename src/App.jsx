@@ -10,6 +10,7 @@ import Account from "#pgs/account/Account.jsx";
 import Comic from "#pgs/comics/Comic.jsx";
 import Create from "#pgs/publish/Create.jsx";
 import Publish from "#pgs/publish/Publish.jsx";
+import NotFound from "#pgs/NotFound.jsx";
 
 export default function App() {
   return  (
@@ -28,6 +29,7 @@ export default function App() {
         <Route path="/publish" component={Publish} preload={booksLoader}/>
         <Route path="/publish/create" component={Create}/>
       </Route>
+		<Route path="*" component={NotFound}/>
     </Router>
   )
 }
